@@ -27,7 +27,7 @@ class ProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-          creatDismissKeyboardTapGesture()
+        self.DismissKeyboard()
         containerView.roundCorners([.topLeft , .topRight], radius: 50)
   
 //        searchContainer.cornerRadius = 25
@@ -58,9 +58,6 @@ class ProfileVC: UIViewController {
        }
     
     
-    func creatDismissKeyboardTapGesture() {
-        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:)))
-        view.addGestureRecognizer(tap)
-    }
+   
 
 }

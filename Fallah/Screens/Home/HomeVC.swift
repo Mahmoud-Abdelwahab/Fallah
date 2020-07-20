@@ -9,24 +9,34 @@
 import UIKit
 import ImageSlideshow
 
+
+
 class HomeVC: UIViewController {
     
+    static var isFromSearch = false
+    @IBOutlet weak var alphaView: UIView!
     var eventList : [Event] = []
     
+    @IBOutlet weak var searchContainer: UIView!
+    @IBOutlet weak var searchField: UITextField!
+    @IBOutlet weak var popUpSearchContainer: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var headerView: UIView!
     var pageControl = UIPageControl()
     //         var slidShowImageArray = [ImageSource(image:"slider")]
     
-    var slidShowImageArray=[InputSource]()// converted savedImage
+    var slidShowImageArray = [InputSource]()// converted savedImage
     @IBOutlet weak var imageSlider: ImageSlideshow!
     @IBOutlet weak var tabBar: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        headerView.roundCorners([.bottomLeft], radius: 60)
+        searchContainer.makeRounded(value: 25, color: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1))
         
+        headerView.roundCorners([.bottomLeft], radius: 60)
+        popUpSearchContainer.roundCorners([.topRight , .topLeft], radius: 60)
+       
         imageSlider.setImageInputs([
             ImageSource(image: UIImage(named: "slider")!),
             ImageSource(image: UIImage(named: "slider")!),
@@ -50,25 +60,66 @@ class HomeVC: UIViewController {
         //        tabBar.layer.cornerRadius = 35
         //        view.backgroundColor = .link
         configureCollectionView()
+          self.DismissKeyboard()
+        
+        
+           let tap = UITapGestureRecognizer(target: self, action: #selector(hidePopUp))
+             alphaView.addGestureRecognizer(tap)
+             
+        
         
         eventList = [Event(title: "Welcom", imageName: "pic_one"),Event(title: "Welcom", imageName: "pic_four"),Event(title: "Welcom", imageName: "pic_one"),Event(title: "Welcom", imageName: "pic_four"),Event(title: "Welcom", imageName: "pic_one")]
-        
+         
     }
     
-    
+    @objc func hidePopUp(){
+        HomeVC.isFromSearch = false
+        self.alphaView.isHidden = true
+                self.popUpSearchContainer.isHidden = true
+   
+        TabBarController.sharedTap.switchToHome() 
+        
+       // self.navigationController?.show(homeVC, sender: nil)
+        tabBarController?.selectedIndex =  4
+ 
+//        guard let tabbarController = UIApplication.shared.tabbarController() as? TabBarController else { return }
+//        tabbarController.selectedIndex = 1  // Will redirect to first tab ( index = 0 )
+//
+//
+       
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // Hide the Navigation Bar
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         
-        TabBarController.changeTabIcon(tab: 0)
+        
+        
+        //       // TabBarController.changeTabIcon(tab: 0)
+      
+        
+        
+        if(HomeVC.isFromSearch == true){
+            self.alphaView.isHidden = false
+            self.alphaView.alpha = 0.5
+            self.popUpSearchContainer.isHidden = false
+         
+        }else{
+            self.alphaView.isHidden = true
+            self.popUpSearchContainer.isHidden = true
+           
+        }
+            
+        
     }
+    
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         // Show the Navigation Bar
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
+    
     }
     
     //
