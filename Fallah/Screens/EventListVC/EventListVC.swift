@@ -9,28 +9,57 @@
 import UIKit
 
 class EventListVC: UIViewController {
-
-    lazy var tableView : UITableViewController = {
-    var table  = UITableViewController()
-        
-        return table
-    }()
+    
+    
+    @IBOutlet weak var headerImage: UIImageView!
+    
+    @IBOutlet weak var headerTitle: UILabel!
+    @IBOutlet weak var containerView: UIView!
+    @IBAction func backBtn(_ sender: Any) {
+    }
+   
+  
+    
+   
+ 
+    var eventList : [Event] = []
+    
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.dataSource = self
+        tableView.delegate   = self
+        containerView.roundCorners([.topRight , .topLeft], radius: 80)
+     
+        
+        
+  eventList = [Event(title: "Welcom", imageName: "pic_one"),Event(title: "Welcom", imageName: "pic_four"),Event(title: "Welcom", imageName: "pic_one"),Event(title: "Welcom", imageName: "pic_four"),Event(title: "Welcom", imageName: "pic_one")]
 
-        // Do any additional setup after loading the view.
+       
+    
+      
     }
     
+   
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+}
+
+extension EventListVC : UITableViewDataSource , UITableViewDelegate
+{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return eventList.count
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: EventListCustomCell.reuseIdentifer, for: indexPath)as! EventListCustomCell
+                  
+        //  cell.event = eventList[indexPath.row]
+        return cell
+    }
+    
+    
+    
 }
