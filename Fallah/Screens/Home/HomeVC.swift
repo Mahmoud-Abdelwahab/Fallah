@@ -14,9 +14,13 @@ import ImageSlideshow
 class HomeVC: UIViewController {
     
     static var isFromSearch = false
+    static var isFromTikets = false
     @IBOutlet weak var alphaView: UIView!
+    @IBOutlet weak var leftTable: UITableView!
+    @IBOutlet weak var rightTable: UITableView!
     var eventList : [Event] = []
     
+    @IBOutlet weak var TikitsContainer: UIView!
     @IBOutlet weak var searchContainer: UIView!
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var popUpSearchContainer: UIView!
@@ -33,7 +37,7 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         searchContainer.makeRounded(value: 25, color: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1))
-        
+        TikitsContainer.roundCorners([.topRight , .topLeft], radius: 25)
         headerView.roundCorners([.bottomLeft], radius: 60)
         popUpSearchContainer.roundCorners([.topRight , .topLeft], radius: 60)
        
@@ -60,6 +64,7 @@ class HomeVC: UIViewController {
         //        tabBar.layer.cornerRadius = 35
         //        view.backgroundColor = .link
         configureCollectionView()
+        configureTableViews()
           self.DismissKeyboard()
         
         
@@ -70,13 +75,17 @@ class HomeVC: UIViewController {
         
         eventList = [Event(title: "Welcom", imageName: "pic_one"),Event(title: "Welcom", imageName: "pic_four"),Event(title: "Welcom", imageName: "pic_one"),Event(title: "Welcom", imageName: "pic_four"),Event(title: "Welcom", imageName: "pic_one")]
          
+        
+        
+        
     }
     
     @objc func hidePopUp(){
         HomeVC.isFromSearch = false
         self.alphaView.isHidden = true
                 self.popUpSearchContainer.isHidden = true
-   
+        HomeVC.isFromTikets = false
+        self.TikitsContainer.isHidden = true
         TabBarController.sharedTap.switchToHome() 
         
        // self.navigationController?.show(homeVC, sender: nil)
@@ -86,7 +95,9 @@ class HomeVC: UIViewController {
 //        tabbarController.selectedIndex = 1  // Will redirect to first tab ( index = 0 )
 //
 //
-       
+        
+        
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -101,16 +112,26 @@ class HomeVC: UIViewController {
         
         
         if(HomeVC.isFromSearch == true){
+             TikitsContainer.isHidden = true
             self.alphaView.isHidden = false
             self.alphaView.alpha = 0.5
             self.popUpSearchContainer.isHidden = false
          
+        }else if (HomeVC.isFromTikets == true) {
+            self.popUpSearchContainer.isHidden = true
+
+            TikitsContainer.isHidden = false
+                       searchContainer.isHidden = true
+                       alphaView.isHidden = false
         }else{
             self.alphaView.isHidden = true
             self.popUpSearchContainer.isHidden = true
+            self.TikitsContainer.isHidden = true
+            HomeVC.isFromTikets = false
            
         }
             
+       
         
     }
     
@@ -142,7 +163,18 @@ class HomeVC: UIViewController {
     }
     
     
-    
+    func configureTableViews(){
+        rightTable.delegate             = self
+        rightTable.dataSource           = self
+        leftTable.delegate              = self
+        leftTable.dataSource            = self
+        
+        
+        rightTable.register(EventsDateCell.nib(), forCellReuseIdentifier: EventsDateCell.reuseIdentifer)
+        
+        leftTable.register(EventsListCell.nib(), forCellReuseIdentifier: EventsListCell.reuseIdentifer)
+      
+    }
     
     
     override var prefersStatusBarHidden: Bool {
@@ -204,5 +236,50 @@ extension HomeVC :  UICollectionViewDelegate  , UICollectionViewDataSource {
         collectionView.deselectItem(at: indexPath, animated: true)
     }
     
+    
+}
+
+extension HomeVC : UITableViewDataSource , UITableViewDelegate  {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       if tableView == leftTable {
+
+
+        return eventList.count
+       }
+       else {
+
+           return eventList.count
+       }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+         if tableView == leftTable {
+            let cell = leftTable.dequeueReusableCell(withIdentifier: EventsListCell.reuseIdentifer, for: indexPath) as! EventsListCell
+            cell.event = eventList[indexPath.row]
+                   return cell
+               }
+               else {
+            let cell = rightTable.dequeueReusableCell(withIdentifier: EventsDateCell.reuseIdentifer , for: indexPath) as! EventsDateCell
+             cell.event = eventList[indexPath.row]
+                   return cell
+                   
+               }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if tableView == leftTable {
+
+
+               return 150
+              }
+              else {
+
+                  return 60
+              }
+    }
     
 }

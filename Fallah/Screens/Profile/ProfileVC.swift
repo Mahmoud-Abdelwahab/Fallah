@@ -45,7 +45,6 @@ class ProfileVC: UIViewController {
            super.viewWillAppear(animated)
            // Hide the Navigation Bar
            self.navigationController?.setNavigationBarHidden(true, animated: animated)
-        TabBarController.changeTabIcon(tab: 4)
 
       
        }

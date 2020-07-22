@@ -9,24 +9,25 @@
 import UIKit
 
 extension UIViewController {
-    func presentPopUpOnMainThread(title : String , message :String , buttonTitle : String ){
-        DispatchQueue.main.async {
-            let alertVC = PopUpCard(alertTitle: title, message: message, buttonTitle: buttonTitle)
-            alertVC.modalPresentationStyle = .overFullScreen
-            alertVC.modalTransitionStyle   = .crossDissolve  // fade in
-           //self.present(alertVC,animated: true)
-            
-            self.present(alertVC, animated: true, completion: nil)
-            //self.navigationController?.pushViewController(alertVC, animated: false)
-            
-        }
-    }
-    
-    
-    
-    
+
     func DismissKeyboard() {
            let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:)))
            view.addGestureRecognizer(tap)
        }
+    
+    
+    func generateQRCode(from string: String) -> UIImage? {
+        let data = string.data(using: String.Encoding.ascii)
+
+        if let filter = CIFilter(name: "CIQRCodeGenerator") {
+            filter.setValue(data, forKey: "inputMessage")
+            let transform = CGAffineTransform(scaleX: 3, y: 3)
+
+            if let output = filter.outputImage?.transformed(by: transform) {
+                return UIImage(ciImage: output)
+            }
+        }
+
+        return nil
+    }
 }

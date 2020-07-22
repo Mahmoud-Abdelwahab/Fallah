@@ -61,40 +61,21 @@ class TabBarController: UITabBarController , UITabBarControllerDelegate {
         }
     }
     
-    
-    static func changeTabIcon(tab:Int){
-        
-//        switch tab {
-//        case 0:
-//            print("home")
-//        case 1:
-//            print("save")
-//        case 2:
-//            print("search")
-//        case 3:
-//            print("bookmark")
-//        case 4 :
-//            print("person")
-//        default:
-//            var _ = "something wrong"
-//        }
-        
-    }
-    
-    
+     
     // UITabBarDelegate
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        print(item.tag)
         switch item.tag {
         case 0:
             print("home")
              HomeVC.isFromSearch = false
+                   HomeVC.isFromTikets = false
         case 1:
-            print("save")
+            print("Tikits")
+                 HomeVC.isFromSearch = false
+            HomeVC.isFromTikets = true
         case 2:
-            print("*********")
+            print("Search")
             HomeVC.isFromSearch = true
-      //   TabBarController.showSearchContainer?()
         case 3:
             print("bookmark")
         case 4 :

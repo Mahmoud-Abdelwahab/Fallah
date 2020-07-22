@@ -18,11 +18,11 @@ class PopUpCard: UIViewController {
     var  buttonTitle : String?
     
     
-    init(alertTitle : String , message : String , buttonTitle : String){
+    init(alertTitle : String , message : String ){
         super.init(nibName : nil , bundle : nil)
         self.alertTitle         = alertTitle
         self.message            = message
-        self.buttonTitle        = buttonTitle
+       
     }
     
     
@@ -45,9 +45,9 @@ class PopUpCard: UIViewController {
     func configuringContainerView()  {
         view.addSubview(containerView)
         NSLayoutConstraint.activate([
-            containerView.heightAnchor.constraint(equalToConstant: 600) ,
+            containerView.heightAnchor.constraint(equalToConstant: 800) ,
             
-            containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -80),
+            containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             
             containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             

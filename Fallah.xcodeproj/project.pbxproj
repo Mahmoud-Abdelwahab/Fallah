@@ -10,6 +10,11 @@
 		5A7D7FC81490DCC79BAD255B /* Pods_Fallah.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AE8890B3C621E016653013A /* Pods_Fallah.framework */; };
 		BB141C8A24C44CDD00AAC4B1 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB141C8924C44CDD00AAC4B1 /* ProfileVC.swift */; };
 		BB141C8C24C44E9800AAC4B1 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB141C8B24C44E9800AAC4B1 /* UIViewControllerExt.swift */; };
+		BB155D8F24C717CD00159A0D /* EventsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB155D8D24C717CD00159A0D /* EventsListCell.swift */; };
+		BB155D9024C717CD00159A0D /* EventsListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB155D8E24C717CD00159A0D /* EventsListCell.xib */; };
+		BB155D9324C717FD00159A0D /* EventsDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB155D9124C717FD00159A0D /* EventsDateCell.swift */; };
+		BB155D9424C717FD00159A0D /* EventsDateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB155D9224C717FD00159A0D /* EventsDateCell.xib */; };
+		BB155D9724C7584A00159A0D /* EventDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB155D9624C7584A00159A0D /* EventDetails.swift */; };
 		BB1A0EA624C2E71500D5E26C /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1A0EA524C2E71500D5E26C /* Event.swift */; };
 		BB1A0EA824C2F02200D5E26C /* UIHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1A0EA724C2F02200D5E26C /* UIHelpers.swift */; };
 		BB1A0EAD24C333B600D5E26C /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1A0EAB24C333B600D5E26C /* EventCell.swift */; };
@@ -30,6 +35,8 @@
 		BB25B65C24C22909009FC94B /* Cairo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB25B65624C22909009FC94B /* Cairo-Regular.ttf */; };
 		BB25B65D24C22909009FC94B /* Cairo-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BB25B65724C22909009FC94B /* Cairo-SemiBold.ttf */; };
 		BB25B66124C23211009FC94B /* FontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB25B66024C23211009FC94B /* FontStyle.swift */; };
+		BB41975024C86F900057EADA /* QrCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB41974F24C86F900057EADA /* QrCodeVC.swift */; };
+		BB41975324C872530057EADA /* EventListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB41975224C872530057EADA /* EventListVC.swift */; };
 		BB505F0C24C57AF5008F039F /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB505F0B24C57AF5008F039F /* SearchVC.swift */; };
 		BB505F1024C57C24008F039F /* GFAlertContainerAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB505F0F24C57C24008F039F /* GFAlertContainerAlert.swift */; };
 		BB505F1224C57C81008F039F /* GFTitleLable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB505F1124C57C81008F039F /* GFTitleLable.swift */; };
@@ -48,6 +55,11 @@
 		93538A9B0AEC89902D966FFD /* Pods-Fallah.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fallah.debug.xcconfig"; path = "Target Support Files/Pods-Fallah/Pods-Fallah.debug.xcconfig"; sourceTree = "<group>"; };
 		BB141C8924C44CDD00AAC4B1 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		BB141C8B24C44E9800AAC4B1 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
+		BB155D8D24C717CD00159A0D /* EventsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsListCell.swift; sourceTree = "<group>"; };
+		BB155D8E24C717CD00159A0D /* EventsListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventsListCell.xib; sourceTree = "<group>"; };
+		BB155D9124C717FD00159A0D /* EventsDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsDateCell.swift; sourceTree = "<group>"; };
+		BB155D9224C717FD00159A0D /* EventsDateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventsDateCell.xib; sourceTree = "<group>"; };
+		BB155D9624C7584A00159A0D /* EventDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetails.swift; sourceTree = "<group>"; };
 		BB1A0EA524C2E71500D5E26C /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		BB1A0EA724C2F02200D5E26C /* UIHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelpers.swift; sourceTree = "<group>"; };
 		BB1A0EAB24C333B600D5E26C /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
@@ -68,6 +80,8 @@
 		BB25B65624C22909009FC94B /* Cairo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Regular.ttf"; sourceTree = "<group>"; };
 		BB25B65724C22909009FC94B /* Cairo-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-SemiBold.ttf"; sourceTree = "<group>"; };
 		BB25B66024C23211009FC94B /* FontStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyle.swift; sourceTree = "<group>"; };
+		BB41974F24C86F900057EADA /* QrCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeVC.swift; sourceTree = "<group>"; };
+		BB41975224C872530057EADA /* EventListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListVC.swift; sourceTree = "<group>"; };
 		BB505F0B24C57AF5008F039F /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		BB505F0F24C57C24008F039F /* GFAlertContainerAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFAlertContainerAlert.swift; sourceTree = "<group>"; };
 		BB505F1124C57C81008F039F /* GFTitleLable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFTitleLable.swift; sourceTree = "<group>"; };
@@ -121,6 +135,39 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		BB155D8A24C7156200159A0D /* EventCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = EventCell;
+			sourceTree = "<group>";
+		};
+		BB155D8B24C7156E00159A0D /* EventsListCell */ = {
+			isa = PBXGroup;
+			children = (
+				BB155D8D24C717CD00159A0D /* EventsListCell.swift */,
+				BB155D8E24C717CD00159A0D /* EventsListCell.xib */,
+			);
+			path = EventsListCell;
+			sourceTree = "<group>";
+		};
+		BB155D8C24C7172F00159A0D /* EventsDateCell */ = {
+			isa = PBXGroup;
+			children = (
+				BB155D9124C717FD00159A0D /* EventsDateCell.swift */,
+				BB155D9224C717FD00159A0D /* EventsDateCell.xib */,
+			);
+			path = EventsDateCell;
+			sourceTree = "<group>";
+		};
+		BB155D9524C7581600159A0D /* EventDetails */ = {
+			isa = PBXGroup;
+			children = (
+				BB155D9624C7584A00159A0D /* EventDetails.swift */,
+			);
+			path = EventDetails;
+			sourceTree = "<group>";
+		};
 		BB1A0EA424C2E6FE00D5E26C /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +188,9 @@
 			isa = PBXGroup;
 			children = (
 				BBEA41CD24BF9DE7004053FA /* HomeVC.swift */,
+				BB155D8C24C7172F00159A0D /* EventsDateCell */,
+				BB155D8B24C7156E00159A0D /* EventsListCell */,
+				BB155D8A24C7156200159A0D /* EventCell */,
 				BB1A0EAB24C333B600D5E26C /* EventCell.swift */,
 				BB1A0EAC24C333B600D5E26C /* EventCell.xib */,
 			);
@@ -242,6 +292,22 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
+		BB41974E24C86F670057EADA /* QRCodeVC */ = {
+			isa = PBXGroup;
+			children = (
+				BB41974F24C86F900057EADA /* QrCodeVC.swift */,
+			);
+			path = QRCodeVC;
+			sourceTree = "<group>";
+		};
+		BB41975124C872070057EADA /* EventListVC */ = {
+			isa = PBXGroup;
+			children = (
+				BB41975224C872530057EADA /* EventListVC.swift */,
+			);
+			path = EventListVC;
+			sourceTree = "<group>";
+		};
 		BB505F0A24C57AB8008F039F /* SearchVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,6 +319,7 @@
 		BB505F0D24C57B08008F039F /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				BB155D9524C7581600159A0D /* EventDetails */,
 				BB1E49A924C0DEE5005267AE /* Login */,
 				BB1E49AA24C0DEEF005267AE /* Registration */,
 				BB1E49A624C0DC0E005267AE /* Home */,
@@ -260,6 +327,8 @@
 				BB505F0A24C57AB8008F039F /* SearchVC */,
 				BB25B64424C1CDB5009FC94B /* ConfirmationCode */,
 				BB1E49A524C0DBED005267AE /* SelectLanguage */,
+				BB41975124C872070057EADA /* EventListVC */,
+				BB41974E24C86F670057EADA /* QRCodeVC */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -369,6 +438,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBEA41D624BF9DF2004053FA /* LaunchScreen.storyboard in Resources */,
+				BB155D9024C717CD00159A0D /* EventsListCell.xib in Resources */,
+				BB155D9424C717FD00159A0D /* EventsDateCell.xib in Resources */,
 				BB25B65A24C22909009FC94B /* Cairo-ExtraLight.ttf in Resources */,
 				BB25B65D24C22909009FC94B /* Cairo-SemiBold.ttf in Resources */,
 				BB25B65C24C22909009FC94B /* Cairo-Regular.ttf in Resources */,
@@ -430,6 +501,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB155D8F24C717CD00159A0D /* EventsListCell.swift in Sources */,
 				BB505F1024C57C24008F039F /* GFAlertContainerAlert.swift in Sources */,
 				BB25B64624C1CDEB009FC94B /* ConfirmationCodeVC.swift in Sources */,
 				BB25B64124C17BB5009FC94B /* UIViewExtention.swift in Sources */,
@@ -440,6 +512,8 @@
 				BB25B64924C22618009FC94B /* TabBarController.swift in Sources */,
 				BB25B64F24C228C0009FC94B /* Sting+Extension.swift in Sources */,
 				BBEA41CA24BF9DE7004053FA /* AppDelegate.swift in Sources */,
+				BB41975324C872530057EADA /* EventListVC.swift in Sources */,
+				BB155D9324C717FD00159A0D /* EventsDateCell.swift in Sources */,
 				BB1E49AE24C0DF59005267AE /* LoginVC.swift in Sources */,
 				BB1E49A824C0DC59005267AE /* SelectLanguageVC.swift in Sources */,
 				BB1A0EA824C2F02200D5E26C /* UIHelpers.swift in Sources */,
@@ -449,7 +523,9 @@
 				BB505F1424C57D8B008F039F /* PopUpCard.swift in Sources */,
 				BB1A0EAD24C333B600D5E26C /* EventCell.swift in Sources */,
 				BB141C8A24C44CDD00AAC4B1 /* ProfileVC.swift in Sources */,
+				BB155D9724C7584A00159A0D /* EventDetails.swift in Sources */,
 				BB505F0C24C57AF5008F039F /* SearchVC.swift in Sources */,
+				BB41975024C86F900057EADA /* QrCodeVC.swift in Sources */,
 				BB25B66124C23211009FC94B /* FontStyle.swift in Sources */,
 				BB25B64B24C228AD009FC94B /* UIFont+Extension.swift in Sources */,
 				BBEA41CC24BF9DE7004053FA /* SceneDelegate.swift in Sources */,
