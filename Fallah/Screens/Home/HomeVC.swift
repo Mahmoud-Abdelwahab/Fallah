@@ -13,6 +13,8 @@ import ImageSlideshow
 
 class HomeVC: UIViewController {
     
+    // sideMenu transition
+    let transtion = SlideInTransision()
     static var isFromSearch = false
     static var isFromTikets = false
     @IBOutlet weak var alphaView: UIView!
@@ -27,6 +29,14 @@ class HomeVC: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var headerView: UIView!
+    @IBAction func SideMenu(_ sender: Any) {
+        guard let sideMenu = self.storyboard?.instantiateViewController(withIdentifier: "SIDEMENU") else {return  }
+        sideMenu.modalPresentationStyle = .overCurrentContext // IMP
+        sideMenu.transitioningDelegate = self
+        present(sideMenu , animated:  true)
+    }
+    @IBAction func NotificationMenu(_ sender: Any) {
+    }
     var pageControl = UIPageControl()
     //         var slidShowImageArray = [ImageSource(image:"slider")]
     
@@ -282,4 +292,19 @@ extension HomeVC : UITableViewDataSource , UITableViewDelegate  {
               }
     }
     
+}
+
+extension HomeVC : UIViewControllerTransitioningDelegate{
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transtion.isPresenting = true
+        
+        return transtion
+    }
+    
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transtion.isPresenting = false
+         return transtion
+    }
 }
